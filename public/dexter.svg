@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120">
+  <!-- Background rectangle -->
+  <rect width="500" height="120" fill="white"/>
+  
+  <!-- Book/Screen Icon -->
+  <path d="M40 20 L40 80 L80 95 L120 80 L120 20 L80 5 Z" 
+        fill="#4A90E2" 
+        stroke="#2171CC" 
+        stroke-width="2"/>
+  
+  <!-- Pages/Screen Lines -->
+  <path d="M80 5 L80 95" 
+        stroke="#2171CC" 
+        stroke-width="2" 
+        fill="none"/>
+  
+  <!-- Graduation Cap -->
+  <path d="M60 45 L80 38 L100 45 L80 52 Z" 
+        fill="#2171CC"/>
+  <path d="M80 52 L80 60 L84 58 L84 50 Z" 
+        fill="#2171CC"/>
+  
+  <!-- Text "DEXTER" with more modern styling -->
+  <text x="140" 
+        y="75" 
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" 
+        font-weight="700" 
+        font-size="60" 
+        letter-spacing="2" 
+        fill="#333333">
+    DEXTER
+  </text>
+</svg>
