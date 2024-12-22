@@ -77,7 +77,7 @@ const DashboardHeader = () => {
       } hover:translate-y-0 shadow-xl shadow-gray-400/50`}
     >
       <div className="relative group">
-        <Image src="/logo_dex.png" alt="Dexter" width={100} height={120} />
+        <Image src="/logo_dex.png" alt="Dexter" width={100} height={120} priority/>
       </div>
       <div className="absolute mr-[2%] right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer ml-auto">
         <FaUser className="h-6 w-6 text-teal-800" aria-hidden="true" />
