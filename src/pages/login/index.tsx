@@ -1,11 +1,9 @@
 "use client";
 import ToastMessage from "@/components/toast";
-import { useBoundStore } from "@/store";
-import { Routes } from "@/utils/navigation";
 import { supabase } from "@/utils/supabase/supabase";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { isEmpty, isStrongPassword } from "validator";
+import { isEmpty } from "validator";
 import isEmail from "validator/lib/isEmail";
 
 const LoginPage: React.FC = () => {
@@ -21,9 +19,6 @@ const LoginPage: React.FC = () => {
     show: false,
     message: "",
   });
-
-  const state = useBoundStore((state) => state);
-  console.log(state);
 
   const validateCredentials = (email: string, password: string) => {
     const flags = { email: false, password: false };
@@ -64,9 +59,6 @@ const LoginPage: React.FC = () => {
       setUserDetails(user);
       setSession(session);
       setLoginError(error);
-      if (!error) {
-        router.push(Routes.home);
-      }
     }
   };
 
@@ -113,6 +105,12 @@ const LoginPage: React.FC = () => {
           onClick={() => loginUser()}
         >
           Login
+        </button>
+        <button
+          className="border border-white p-2 rounded hover:bg-teal-600 shadow-md text-white"
+          onClick={() => router.push("/")}
+        >
+          Route to Dashboard
         </button>
         <button
           className="rounded text-white hover:underline text-sm"
