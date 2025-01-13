@@ -8,7 +8,6 @@ import isEmail from "validator/lib/isEmail";
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
-
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [userDetails, setUserDetails] = React.useState<any>();

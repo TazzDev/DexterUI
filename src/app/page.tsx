@@ -2,6 +2,7 @@
 import DashboardHeader from "@/components/dashboard-header";
 import HomepageNavCard from "@/components/homepage-nav-card";
 import { supabase } from "../utils/supabase/supabase";
+import { useEffect } from "react";
 
 const homepageNavCards = [
   { title: "Fees & Payments", description: "Home", path: "/" },
@@ -11,22 +12,19 @@ const homepageNavCards = [
 ];
 
 export default function Home() {
-  // const router = useRouter();
-  // console.log(state)
 
-  async function callAPI () {
-    const { data } = await supabase.from('Users').select('*');
-    supabase.auth.signInWithPassword({ email: 'thomsonmartinbzn@gmail.com', password: '123456' })
-    console.log("API called")
-    console.log(data)
+  async function callAPI() {
+    const { data } = await supabase.from("Users").select("*");
+    supabase.auth.signInWithPassword({
+      email: "thomsonmartinbzn@gmail.com",
+      password: "123456",
+    });
+    console.log("API called");
+    console.log(data);
   }
-  
+
   callAPI();
 
-  const authTokenKey = Object.keys(localStorage).find(key => key.includes('auth-token'));
-  if (!authTokenKey) {
-    // router.push('/login')
-  }
   return (
     <div className="bg-gray-100 min-h-[100vh] w-full flex items-center justify-center">
       <DashboardHeader />
