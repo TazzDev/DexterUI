@@ -12,11 +12,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
     <Auth0Provider
-          domain="dev-35qguy1iybrdzwwq.jp.auth0.com"
-          clientId="3sq4fFZc8xvUU7lFNJmG8f21e3949IQP"
-          // authorizationParams={{
-          //   redirect_uri: `${window.location.origin}/login`,
-          // }}
+          domain={import.meta.env.VITE_AUTH0_DOMAIN}
+          clientId={import.meta.env.VITE_AUTH0_CLIENTID}
+          authorizationParams={{
+            redirect_uri: `${window.location.origin}`,
+          }}
         >
       <Routes>
        
