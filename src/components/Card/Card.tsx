@@ -1,11 +1,7 @@
 import React from "react";
-import { isNullOrUndefined } from "../../utils/utils";
+import { Enum, isNullOrUndefined } from "../../utils/utils";
 
 type TCardSize = "S" | "M" | "L" | "XL";
-
-// const cardSize = {
-//     S: 'S', M : 'M', L: 'L', XL: 'XL'
-// }
 
 interface ICardProps {
   id?: string;
@@ -14,25 +10,24 @@ interface ICardProps {
   children: React.ReactNode;
 }
 
-const CARD_SIZE_MAP = {
-  S: "40%",
-  M: "45%",
-  L: "50%",
-  XL: "60%",
-};
+const CARD_SIZE_MAP = Enum({
+  S: "w-sm",
+  M: "w-md",
+  L: "w-lg",
+  XL: "w-2xl",
+});
 
 const Card: React.FC<ICardProps> = ({
   id = crypto.randomUUID(),
   size = "M",
-  overrideSize = 0,
-  children
+  overrideSize,
+  children,
 }) => {
-  const effectiveSize: string =
-    !isNullOrUndefined(overrideSize) && !isNaN(overrideSize)
-      ? overrideSize + "%"
-      : CARD_SIZE_MAP[size];
+  const effectiveSize: string = !isNullOrUndefined(overrideSize)
+    ? overrideSize + "%"
+    : CARD_SIZE_MAP[size];
 
-  const classNames = `w-${effectiveSize}`;
+  const classNames = `${effectiveSize} bg-blue-300 mx-2 my-2`;
   return (
     <div id={id} className={classNames}>
       {children}
