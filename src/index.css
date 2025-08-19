@@ -1,2 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    --color-card-background: oklch(0.95 0.01 270);
+    --color-card-heading: oklch(0.15 0.01 270);
+    --color-card-text: oklch(0.45 0.01 270);
+    --color-button-background: oklch(0.05 0.01 270);
+    --color-button-hover: oklch(0.05 0.01 270);
+}
