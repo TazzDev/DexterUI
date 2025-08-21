@@ -1,4 +1,10 @@
-export const CLASS_WISE_FEES_MOCK = [
+export type ClassFee<T = string> = {
+  class: T;            // can be string, number, etc.
+  feesPaid: number;
+  feesPending: number;
+};
+
+export const CLASS_WISE_FEES_MOCK: ClassFee<string>[] = [
     {
       class: '1',
       feesPaid: 1000,

@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "nvm use && vite",
+    "build": "nvm use && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "nvm use && vite preview"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.4.0",

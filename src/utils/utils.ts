@@ -1,3 +1,5 @@
+import type { ClassFee } from "../../DATA_MOCKS/classWiseFeesMock";
+
 function isNullOrUndefined<Type>(value: Type): boolean {
   return value === undefined || value === null;
 }
@@ -16,4 +18,23 @@ function Enum<T extends object>(baseEnum: T): T {
   }) as T;
 }
 
-export { isNullOrUndefined, Enum };
+
+const transformData = (data: ClassFee<string>[]) => {
+  return {
+    labels: data.map((item) => item.class),
+    datasets: [
+      {
+        label: "Fees Paid",
+        data: data.map((item) => item.feesPaid),
+        backgroundColor: "rgb(255, 99, 132)",
+      },
+      {
+        label: "Fees Pending",
+        data: data.map((item) => item.feesPending),
+        backgroundColor: "rgb(54, 162, 235)",
+      },
+    ],
+  };
+};
+
+export { isNullOrUndefined, Enum, transformData };
