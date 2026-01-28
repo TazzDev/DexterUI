@@ -32,7 +32,7 @@ const Card: React.FC<ICardProps> = ({
     ? overrideSize + "%"
     : CARD_SIZE_MAP[size];
 
-  const classNames = `${effectiveSize} bg-card-background px-2 py-2 mx-2 my-2 rounded-md text-card-text text-xl ${styleOverride}`;
+  const classNames = `${effectiveSize} bg-card-background px-4 py-4 mx-4 my-4 rounded-lg text-card-text text-xl border border-gray-200 shadow-lg ${styleOverride}`;
   return (
     <div id={resolvedId} className={classNames}>
       {children}

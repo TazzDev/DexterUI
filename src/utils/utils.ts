@@ -1,4 +1,5 @@
 import type { ClassFee } from "../../DATA_MOCKS/classWiseFeesMock";
+import type { ChartData } from "chart.js";
 
 function isNullOrUndefined<Type>(value: Type): boolean {
   return value === undefined || value === null;
@@ -19,7 +20,7 @@ function Enum<T extends object>(baseEnum: T): T {
 }
 
 
-const transformData = (data: ClassFee<string>[]) => {
+const transformData = (data: ClassFee<string>[]): ChartData<"bar"> => {
   return {
     labels: data.map((item) => item.class),
     datasets: [
